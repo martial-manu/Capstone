@@ -4,12 +4,20 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-
+import { UserProvider } from './contexts/user.context';
+import { ProductsProvider } from './contexts/products.context';
+import { CartProvider } from './contexts/cart.context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
+    <BrowserRouter> {/* for routing */} 
+      <UserProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <App />  {/* We want product provider to be able to get user provider resources*/}
+          </CartProvider>
+        </ProductsProvider>
+      </UserProvider>   {/* for global data storgar jise ham context kehte react m */ }
     </BrowserRouter>
   </React.StrictMode>
 );

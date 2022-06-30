@@ -36,5 +36,6 @@ const Home  = ()=>{
        <Categories categories = {categories}></Categories>        
     </div>
   )
+  
 }
 export default Home ;

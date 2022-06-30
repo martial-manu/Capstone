@@ -1,7 +1,5 @@
 /*
   We know there are three types of button , how do i make them working ? 
-
-
 */ 
 
 import './button.styles.scss'
